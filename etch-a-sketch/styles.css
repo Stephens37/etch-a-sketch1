@@ -1,0 +1,12 @@
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(16, 25px);
+  width: auto;
+}
+
+.sketch {
+    background: black;
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
