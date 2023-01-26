@@ -1,15 +1,24 @@
-let userInput = prompt("Choose the number of squares.");
+
 let squareContainer = document.getElementById("grid-container");
-function createDivs(num){
-for (let num = 0; num < 100; num++){
-    let squares = document.createElement("div");
-    squares.classList.add("sketch");
-  squares.addEventListener("mouseover", changeColorBlue);
+
+function createDivs(){
+for (let num = 0; num < (squareInput*squareInput); num++){
+    let squareInput = document.createElement("div");
+
+    squareInput.classList.add("sketch");
+    squareInput.addEventListener("mouseover", changeColorBlue);
     
-  document.getElementById("grid-container").appendChild(squares);
+  document.getElementById("grid-container").appendChild(squareInput);
 }
 }
-createDivs(userInput);
+
+function userInput(){
+    document.getElementById("grid-container").innerHTML = "";
+    squareInput = window.prompt("Choose the number of squares per side.");
+    squareContainer.style.setProperty("grid-template-columns", `repeat(${squareInput}, 25px)`);
+    
+    squareInput = createDivs();
+}
 
 function changeColorBlue(){
     this.style.backgroundColor = "blue";

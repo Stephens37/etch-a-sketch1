@@ -1,6 +1,7 @@
 #grid-container {
   display: grid;
-  grid-template-columns: repeat(16, 25px);
+  grid-template-columns: repeat(squareInput, 25px);
+  grid-template-rows: repeat(squareInput, 25px);
   width: auto;
 }
 
