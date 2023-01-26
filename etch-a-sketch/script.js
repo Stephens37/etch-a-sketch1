@@ -6,7 +6,9 @@ for (let num = 0; num < (squareInput*squareInput); num++){
     let squareInput = document.createElement("div");
 
     squareInput.classList.add("sketch");
-    squareInput.addEventListener("mouseover", changeColorBlue);
+    squareInput.addEventListener("mouseover", () => {
+        squareInput.style.backgroundColor = changeColor();
+    });
     
   document.getElementById("grid-container").appendChild(squareInput);
 }
@@ -20,6 +22,10 @@ function userInput(){
     squareInput = createDivs();
 }
 
-function changeColorBlue(){
-    this.style.backgroundColor = "blue";
+function changeColor(){
+    const randomBetween = (min, max) => min + Math.floor(Math.random() * (max-min + 1));
+    const r = randomBetween(0, 255);
+    const g = randomBetween(0, 255);
+    const b = randomBetween(0, 255);
+    return `rgb(${r},${g}, ${b})`;
 }
